@@ -1,0 +1,182 @@
+/* color scheme https://blog.bettersheets.co/google-sheets-green-color-hex-code/ */
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+
+}
+
+header {
+    font-size: xx-large;
+}
+
+#nav-menu {
+    box-sizing: border-box;
+    background-color: #0F9D58;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: none;
+    border-radius: 15%;
+}
+
+
+#nav-menu:hover {
+    background-color: #D9D9D9;
+}
+
+.menu-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-lines {
+    width: 65%;
+    height: 0.3rem;
+    background-color: #fff;
+    margin-top: 10%;
+}
+
+/* for some reason aligns were not centered so added space before first line */
+.menu-lines:first-of-type {
+    margin-top: 20%;
+}
+
+nav {
+    position: fixed;
+    border: 1px solid #0F9D58;
+    padding: 1rem;
+    height: 95%;
+    width: 15%;
+
+}
+
+nav header {
+    color: #0F9D58;
+    font-weight: bold;
+}
+
+nav>a {
+
+    display: block;
+    margin: 1rem 0;
+    padding: 1rem;
+    color: #000000;
+    text-decoration: none;
+
+}
+
+nav>a:hover {
+    background-color: #0F9D58;
+}
+
+nav,
+main {
+    display: inline-block;
+}
+
+main {
+    padding: 1rem 5rem;
+    margin-left: 15%;
+
+}
+
+.code {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #D9D9D9;
+}
+
+.tutorial {
+    display: block;
+    margin: 2rem 0;
+    filter: drop-shadow(0 0 1rem #D9D9D9);
+    padding: 1rem;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+
+/* responsive display */
+/* when menu is clicked to hide nav-links, couldn't display:block didn't work so reset display to block again with override */
+@media only screen and (min-width:1000px) {
+    nav>a {
+        display: block !important;
+    }
+}
+
+@media only screen and (max-width:1000px) {
+    nav {
+        width: 96%;
+        max-height: auto;
+        position: static;
+        top: 0;
+
+    }
+
+    #nav-menu {
+        display: block;
+    }
+
+
+    nav>a {
+        display: none;
+    }
+
+    nav,
+    main {
+        display: block;
+        margin: 0rem;
+        padding: 1rem;
+    }
+}
+
+
+
+/*For those who might be bothered by the animation*/
+@media (prefers-reduced-motion: no-preference) {
+    * {
+        scroll-behavior: smooth;
+    }
+}
+
+footer {
+    border-top: 1px solid #D9D9D9;
+    margin: auto;
+    text-align: center;
+}
+
+/* https://www.w3schools.com/howto/howto_js_scroll_to_top.asp */
+#topbutton {
+    bottom: 1%;
+    right: 1%;
+    display: none;
+    position: fixed;
+    background-color: #0F9D58;
+    cursor: pointer;
+    border-radius: 15%;
+    font-size: 28px;
+    border: none;
+    width: 3rem;
+    height: 3rem;
+    margin: 1.3%;
+    color: #ffffff;
+}
+
+#topbutton:hover {
+    background-color: #D9D9D9;
+    border: 1px solid #ffffff;
+
+}
+
+#githublink {
+    color: #0F9D58;
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+
+#githublink:hover {
+    background-color: #D9D9D9;
+    color: #000000;
+    cursor: pointer;
+}

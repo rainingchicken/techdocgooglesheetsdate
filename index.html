@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="freeCodeCamp Build a Technical Document project" />
+    <title>How to write dates in Google Sheets</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://fonts.google.com/specimen/Open+Sans">
+    <link rel="stylesheet" href="https://fonts.google.com/specimen/Bebas+Neue">
+</head>
+
+<body>
+    <nav id="navbar">
+        <header>Date in Google Sheets</header>
+        <div id="nav-menu" title="Navigation Menu" onclick="showMenu()">
+            <div class="menu-wrap">
+                <div class="menu-lines"></div>
+                <div class="menu-lines"></div>
+                <div class="menu-lines"></div>
+            </div>
+        </div>
+        <a class="nav-link" href="#Introduction">Introduction</a>
+        <a class="nav-link" href="#Manual_Method">Manual Method</a>
+        <a class="nav-link" href="#Formula_Method">Formula Method</a>
+        <a class="nav-link" href="#Data_Validation_Method">Data Validation Method</a>
+        <a class="nav-link" href="#Format_Date">Format Date</a>
+        <a class="nav-link" href="#Custom_Format_Date">Custom Format Date</a>
+        <a class="nav-link" href="#Local_Format_Date">Local Format Date</a>
+        <a class="nav-link" href="#References">References</a>
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="Introduction">
+            <header>Introduction</header>
+            <p>Google Sheets is one of the most popular spreadsheets to organize, analyze, and visualize data. This
+                convenient tool can help you add dates to your document more efficiently and easily. The ways to input a
+                date in a cell of the spreadsheet include:
+            </p>
+            <ul>
+                <li>Manually entering dates by typing into a cell</li>
+                <li>Using the formulas such as <b>=date(YEAR, MONTH, DAY)</b>, <b>=today()</b>, <b>=now()</b></li>
+                <li>Using date pickers</li>
+            </ul>
+            <p>Once the dates have been inputted into a cell, you can change the syntax of the date by doing the
+                following customizations
+            </p>
+            <ul>
+                <li>Default date number format</li>
+                <li>Custom date and time format</li>
+                <li>Changing locale for local date format</li>
+            </ul>
+        </section>
+        <section class="main-section" id="Manual_Method">
+            <header>Manual Method</header>
+            <p>While it may be time consuming, the first method is the easiest and most reliable way to input a date
+                into a cell.</p>
+            <p>Select a cell by left clicking in the box and type with your keyboard</p>
+            <div class="code">
+                <code><span class="Day">DAY</span> <span class="fullMonth">MONTH</span> <span class="Year">YEAR</span></code><br>
+                <code><span class="fullMonth">MONTH</span> <span class="Day">DAY</span>, <span class="Year">YEAR</span></code><br>
+                <code><span class="shortMonth">MONTH</span> <span class="Day">DAY</span>, <span class="Year">YEAR</span></code><br>
+                <code><span class="Month">MONTH</span>/<span class="Day">DAY</span>/<span class="shortYear">YEAR</span></code><br>
+                <code><span class="Month">MONTH</span>-<span class="Day">DAY</span>-<span class="shortYear">YEAR</span></code>
+            </div>
+            <p>The ways to write dates above will be recognized as dates and therefore, Google Sheets may assist in
+                automatically creating a series or list of dates. Otherwise, dates will be interpreted as a string of
+                text. Examples of what Google Sheets will <b><em>NOT</em></b> recognize include </p>
+            <div class="code">
+                <code><span class="fullMonth">MONTH</span> <span class="shortDay">DAY</span> <span class="Year">YEAR</span></code><br>
+                <code>The <span class="fullDay">DAY</span> of <span class="fullMonth">MONTH</span> <span class="Year">YEAR</span></code><br>
+            </div>
+        </section>
+        <section class="main-section" id="Formula_Method">
+            <header>Formula Method</header>
+            <p>You can enter a date by typing the DATE formula into a cell or the formula box. Using the formula method
+                allows you to dynamically manipulate, change, extract components, and do formulaic calculations on
+                the dates. You may also select other cells as arguments to fulfill the year, month, and day component.
+            </p>
+            <p>Syntax: <b>=DATE(year, month, day)</b></p>
+            <p>Note:inputs must be numerical</p>
+            <p>Inputs</p>
+            <div class="code">
+                <code>=DATE(<span class="Year">YEAR</span>,<span class="Month">MONTH</span>,<span class="Day">DAY</span>)</code><br>
+                <code>=DATE(A1,B1,C1)</code>
+            </div>
+            <p>Outputs:</p>
+            <div class="code">
+                <code><span class="Month">MONTH</span>/<span class="Day">DAY</span>/<span class="Year">YEAR</span></code><br>
+                <code><span class="Month">MONTH</span>/<span class="Day">DAY</span>/<span class="Year">YEAR</span></code>
+            </div>
+            <p>If you want to enter today's date or today's date and time, you can input one of these formulas into a
+                cell or a function box:</p>
+            <p>Syntax: <b>=TODAY()</b></p>
+            <p>Syntax: <b>=NOW()</b></p>
+            <p>Inputs</p>
+            <div class="code">
+                <code>=TODAY()</code><br>
+                <code>=NOW()</code>
+            </div>
+            <p>Outputs:</p>
+            <div class="code">
+                <code><span class="Month">MONTH</span>/<span class="Day">DAY</span>/<span class="Year">YEAR</span></code><br>
+                <code><span class="Month">MONTH</span>/<span class="Day">DAY</span>/<span class="Year">YEAR</span> <span class="Time">TIME</span></code>
+            </div>
+        </section>
+        <section class="main-section" id="Data_Validation_Method">
+            <header>Data Validation Method</header>
+            <p>The data validation method allows you to input dates via the dropdown menu of a calendar. This may be a
+                more intuitive option</p>
+            <p>Select a cell and then select <b>Data > Data Validation > Add Rule > Criteria > Is valid date > Show a
+                    warning > Done</b>. Then double click on the cell and a calander will appear for you to pick a date.
+            </p>
+            <img class="tutorial" alt="data validation steps: Date, Data validation" title="Date > Data validation"
+                src="images/data_validation_step_1.png">
+            <img class="tutorial" alt="data validation steps: Add rule" title="Add rule"
+                src="images/data_validation_step_2.png">
+            <img class="tutorial" alt="data validation steps: is valid data" title="is valid data"
+                src="images/data_validation_step_3.png">
+            <img class="tutorial" alt="data validation steps: show a warning, done" title="show a warning > done"
+                src="images/data_validation_step_4.png">
+            <img class="tutorial" alt="data validation steps: double click, select date"
+                title="double click > select date" src="images/data_validation_step_5.png">
+        </section>
+        <section class="main-section" id="Format_Date">
+            <header>Format Date</header>
+            <p>An entered date that is not in the syntax of
+                <code><span class="Month">MONTH</span>/<span class="Day">DAY</span>/<span class="Year">YEAR</span></code>
+                may be converted to as such.
+            </p>
+            <p>Select the cell with the date and then select <b>Format > Number > Date</b></p>
+            <img class="tutorial" alt="format date steps: Format, Number, Date" title="Format > Number > Date"
+                src="images/format_date.png">
+            <p>Inputs:</p>
+            <div class="code">
+                <code><span class="Day">DAY</span> <span class="fullMonth">MONTH</span> <span class="Year">YEAR</span></code><br>
+                <code><span class="fullMonth">MONTH</span> <span class="Day">DAY</span>, 2024</code><br>
+                <code><span class="shortMonth">MONTH</span> <span class="Day">DAY</span>, 2024</code><br>
+                <code><span class="Month">MONTH</span>/<span class="Day">DAY</span>/<span class="shortYear">YEAR</span></code><br>
+                <code><span class="Month">MONTH</span>-<span class="Day">DAY</span>-<span class="shortYear">YEAR</span></code>
+            </div>
+            <p>Outputs:</p>
+            <div class="code">
+                <code><span class="Month">MONTH</span>/<span class="Day">DAY</span>/<span class="Year">YEAR</span></code><br>
+                <code><span class="Month">MONTH</span>/<span class="Day">DAY</span>/<span class="Year">YEAR</span></code><br>
+                <code><span class="Month">MONTH</span>/<span class="Day">DAY</span>/<span class="Year">YEAR</span></code><br>
+                <code><span class="Month">MONTH</span>/<span class="Day">DAY</span>/<span class="Year">YEAR</span></code><br>
+                <code><span class="Month">MONTH</span>/<span class="Day">DAY</span>/<span class="Year">YEAR</span></code>
+            </div>
+        </section>
+        <section class="main-section" id="Custom_Format_Date">
+            <header>Custom Format Date</header>
+            <p>If you do not want the date to be in the format
+                <code><span class="Month">MONTH</span>/<span class="Day">DAY</span>/<span class="Year">YEAR</span></code>,
+                you can customize the way the date is presented.
+            </p>
+            <p>Select the cell with the date and then select <b>Format > Number > Custom date and time > Choose a format
+                    >
+                    Apply</b></p>
+            <img class="tutorial" alt="custom format date steps: Format, Number, Custom date and time"
+                title="Format > Number > Custom date and time" src="images/custom_format_date_step_1.png">
+            <img class="tutorial" alt="custom format date steps: select format, Apply" title="select format > Apply"
+                src="images/custom_format_date_step_2.png">
+        </section>
+        <section class="main-section" id="Local_Format_Date">
+            <header>Local Format Date</header>
+            <p>Addition, if you are from a place where the formal or standardized way to write days is different
+                such as (day, month, year), you can change your location by going to <b>File > Settings > Locale >
+                    Change location > Save Settings</b></p>
+            <img class="tutorial" alt="change_locale_steps: File, Settings" title="File > Settings"
+                src="images/change_locale_step_1.png">
+            <img class="tutorial" alt="change_locale_steps: Locale, Save Settings" title="Locale > Save Settings"
+                src="images/change_locale_step_2.png">
+        </section>
+        <section class="main-section" id="References">
+            <header>References</header>
+            <p>DATE - Google Docs Editors Help. (n.d.). Support.google.com.
+                https://support.google.com/docs/answer/3092969?hl=en
+            </p>
+            <p>How to Write Dates Correctly in English. (2019, April 25). How to Write Dates Correctly | Grammarly.
+                https://www.grammarly.com/blog/how-to-write-dates/</p>
+            <p>NOW - Google Docs Editors Help. (n.d.). Support.google.com.
+                https://support.google.com/docs/answer/3092981?hl=en-GB&sjid=14087525689645028504-NC
+            </p>
+            <p>TODAY - Google Docs Editors Help. (n.d.). Support.google.com.
+                https://support.google.com/docs/answer/3092984?hl=en
+            </p>
+            <p>Zach. (2023, September 29). How to Insert a Date Picker in Google Sheets (With Example). Statology.
+                https://www.statology.org/google-sheets-insert-date-picker/
+            </p>
+        </section>
+        <footer id='foot'>
+            <button onclick="scrolltotop()" id="topbutton" title="Scroll to Top"> ^ </button>
+            <address>
+                <p> <a href="https://github.com/rainingchicken/techdocgooglesheetsdate/tree/main"><img
+                            src="https://github.githubassets.com/assets/GitHub-Logo-ee398b662d42.png" width=5%
+                            alt="Github Website">
+                    </a></p>
+                <p> <a id="githublink"
+                        href="https://github.com/rainingchicken/techdocgooglesheetsdate/tree/main">rainingchicken</a>
+                </p>
+            </address>
+        </footer>
+    </main>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
