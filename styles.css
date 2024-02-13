@@ -2,7 +2,6 @@
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: large;
-
 }
 
 header {
@@ -43,6 +42,7 @@ header {
 }
 
 nav {
+    box-sizing: border-box;
     position: fixed;
     border: 1px solid #0F9D58;
     padding: 1rem;
@@ -113,7 +113,7 @@ main {
 
 @media only screen and (max-width:1000px) {
     nav {
-        width: 96%;
+        width: 100%;
         max-height: auto;
         position: static;
         top: 0;
