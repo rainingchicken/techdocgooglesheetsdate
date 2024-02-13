@@ -4,6 +4,8 @@ https://rainingchicken.github.io/techdocgooglesheetsdate/
 ### Purpose
 This is one of the project requirement for the freecodecamp.org Responsive Web Design Certification. It is a technical document page about different ways dates can be added to a cell in Google Sheets. Also it was deceptively simple, I like the clean look of the web page.
 
+![samplewebsitetechdocgooglesheetsdate](https://github.com/rainingchicken/techdocgooglesheetsdate/blob/main/images/techdocpagesample.png) (updated 2/12/2024)
+
 ### Features
 - Responsive tables of content menu that changes depending on screen size
 - Real time tutorial
